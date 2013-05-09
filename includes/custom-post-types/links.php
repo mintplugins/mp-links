@@ -45,7 +45,7 @@ function mp_links_post_type() {
 		); 
 		register_post_type( 'mp_link', apply_filters( 'mp_links_people_post_type_args', $sermon_args ) );
 }
-add_action( 'init', 'mp_links_post_type', 100 );
+add_action( 'init', 'mp_links_post_type', 0 );
 
 /**
  * Change default title
@@ -116,4 +116,4 @@ function mp_links_groups_taxonomy() {
 			)  
 		);  
 }  
-add_action( 'set_current_user', 'mp_links_groups_taxonomy' ); 
+add_action( 'init', 'mp_links_groups_taxonomy', 10 ); 

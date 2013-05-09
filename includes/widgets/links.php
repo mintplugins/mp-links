@@ -11,7 +11,7 @@ class MP_LINKS_Widget extends MP_CORE_Widget {
 		parent::__construct(
 	 		'mp_links_widget', // Base ID
 			'Links Widget', // Name
-			array( 'description' => __( 'Display links', 'text_domain' ), ) // Args
+			array( 'description' => __( 'Display links', 'mp_links' ), ) // Args
 		);
 		
 		//enqueue scripts defined in MP_CORE_Widget
@@ -29,7 +29,7 @@ class MP_LINKS_Widget extends MP_CORE_Widget {
 				'field_title' 	=> __('Select the link group:', 'mp_links'),
 				'field_description' 	=> NULL,
 				'field_type' 	=> 'select',
-				'field_select_values' => mp_core_get_all_tax('mp_link_groups'),
+				'field_select_values' => mp_core_get_all_posts_by_tax('mp_link_groups'),
 			),
 		);
 	
@@ -45,19 +45,19 @@ class MP_LINKS_Widget extends MP_CORE_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		$title = apply_filters( 'widget_title', isset($instance['title']) ? $instance['title'] : '' );
-		
-		/**
-		 * Links Before Hook
-		 */
-		 do_action('mp_links_before_widget');
-		
+		$title = apply_filters( 'mp_links_widget_title', isset($instance['title']) ? $instance['title'] : '' );
+				
 		/**
 		 * Widget Start and Title
 		 */
 		echo $before_widget;
 		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
+			
+		/**
+		 * Links Before Hook
+		 */
+		 do_action('mp_links_before_widget');
 			
 		/**
 		 * Widget Body
@@ -79,27 +79,39 @@ class MP_LINKS_Widget extends MP_CORE_Widget {
 			)
 		);	
 		
+		//Filter for the icon font css location. Check if it's emtpy or not and display the Title of the post, or not, accordingly.
+		$icon_font = has_filter('mp_links_font_style_location') ? apply_filters( 'mp_links_font_style_location', $first_output) : 'There is an icon font being used';
+	
 		//Create new query for stacks
-		$link_group = new WP_Query( apply_filters( 'link_args', $link_args ) );
+		$link_group = new WP_Query( apply_filters( 'mp_links_link_args', $link_args ) );
 			
 		//Loop through the stack group		
 		if ( $link_group->have_posts() ) : 
 			echo '<ul class="mp-links">';
 			while( $link_group->have_posts() ) : $link_group->the_post(); 
-				echo '<li class="' . get_post_meta(get_the_id(), 'link_type', true)  . '-li"><a class="' . get_post_meta(get_the_id(), 'link_type', true) . '" href="' . get_post_meta(get_the_id(), 'link_url', true) . '">' . get_the_title() . '</a></li>';
+			
+				//If there isn't an icon font, show the title
+				if ( empty( $icon_font ) ){
+					echo '<li class="' . get_post_meta(get_the_id(), 'link_type', true)  . '-li"><a target="' . get_post_meta(get_the_id(), 'link_target', true) . '" class="' . get_post_meta(get_the_id(), 'link_type', true) . '" href="' . get_post_meta(get_the_id(), 'link_url', true) . '">' . get_the_title() . '</a></li>';
+				}
+				//If there IS an icon font, don't show the title
+				else{
+					echo '<li class="' . get_post_meta(get_the_id(), 'link_type', true)  . '-li"><a target="' . get_post_meta(get_the_id(), 'link_target', true) . '" class="' . get_post_meta(get_the_id(), 'link_type', true) . '" href="' . get_post_meta(get_the_id(), 'link_url', true) . '">' . '</a></li>';	
+				}
 			endwhile;
 			echo '</ul>';
 		endif;
+		
+		/**
+		 * Links After Hook
+		 */
+		 do_action('mp_links_after_widget');
 		
 		/**
 		 * Widget End
 		 */
 		echo $after_widget;
 		
-		/**
-		 * Links After Hook
-		 */
-		 do_action('mp_links_after_widget');
 	}
 }
 

@@ -19,7 +19,9 @@ function mp_links_create_meta_box(){
 	/**
 	 * Custom filter to allow for themes to change the description of the sermon thumbnail. This allows for custom size description. IE: 200px by 100px
 	 */
-	$mp_links_array = has_filter('mp_links_array') ? apply_filters( 'mp_links_array', '') : array('mp-links-facebook' => 'Facebook', 'mp-links-twitter' => 'Twitter', 'mp-links-tumblr' => 'Tumblr', 'mp-links-youtube' => 'YouTube', 'mp-links-vimeo' => 'Vimeo', 'mp-links-myspace' => 'MySpace', 'mp-links-linkedin' => 'Linked-In', 'mp-links-dribbble' => 'Dribbble', 'mp-links-pinterest' => 'Pinterest', 'mp-links-email' => 'Email', 'mp-links-rss' => 'RSS');
+	$default_links_array = array('mp-links-facebook' => 'Facebook', 'mp-links-twitter' => 'Twitter', 'mp-links-tumblr' => 'Tumblr', 'mp-links-youtube' => 'YouTube', 'mp-links-vimeo' => 'Vimeo', 'mp-links-myspace' => 'MySpace', 'mp-links-linkedin' => 'Linked-In', 'mp-links-dribbble' => 'Dribbble', 'mp-links-pinterest' => 'Pinterest', 'mp-links-email' => 'Email', 'mp-links-rss' => 'RSS');
+	 
+	$mp_links_array = has_filter('mp_links_array') ? apply_filters( 'mp_links_array', $default_links_array) : $default_links_array;
 		
 	/**
 	 * Array which stores all info about the options within the metabox
@@ -40,6 +42,14 @@ function mp_links_create_meta_box(){
 			'field_type' 	=> 'select',
 			'field_value' => '',
 			'field_select_values' => $mp_links_array
+		),
+		array(
+			'field_id'			=> 'link_target',
+			'field_title' 	=> __( 'Link Open Type', 'mp_core'),
+			'field_description' 	=> 'Select the way this link will open:',
+			'field_type' 	=> 'select',
+			'field_value' => '',
+			'field_select_values' => array( '_self' => 'In the current window', '_blank' => 'In a new window/tab' )
 		),
 	);
 	

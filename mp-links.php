@@ -105,7 +105,7 @@ function mp_links_include_files(){
 		/**
 		 * Include Plugin Checker
 		 */
-		require( MP_LINKS_PLUGIN_DIR . 'includes/plugin-checker/plugin-checker.php' );
+		require( MP_LINKS_PLUGIN_DIR . 'includes/plugin-checker/class-plugin-checker.php' );
 		
 		/**
 		 * Check if wp_core in installed
@@ -137,6 +137,11 @@ function mp_links_include_files(){
 		 * Links Widget
 		 */
 		require( MP_LINKS_PLUGIN_DIR . 'includes/widgets/links.php' );
+		
+		/**
+		 * Enqueue Scripts
+		 */
+		require( MP_LINKS_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
 					
 	}
 }

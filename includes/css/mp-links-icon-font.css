@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'mp_links_icons';
+  src: url("../fonts/entypo/entypo-social.eot?8802042");
+  src: url("../fonts/entypo/entypo-social.eot?8802042#iefix") format('embedded-opentype'), url("../fonts/entypo/entypo-social.woff?8802042") format('woff'), url("../fonts/entypo/entypo-social.ttf?8802042") format('truetype'), url("../fonts/entypo/entypo-social.svg?8802042#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?8802042#fontello') format('svg');
+  }
+}
+*/
+[class^="mp-links"]:before,
+[class*=" mp-links"]:before,
+.mp-links-c-youtube:before {
+  font-family: 'mp_links_icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+/* opacity .8 */
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+/* Uncomment for 3D effect */
+/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.mp-links-youtube:before { content: '\f300'; } /* '⎉' */
+
+.mp-links-github:before { content: '\f300'; } /* '⎉' */
+.mp-links-c-github:before { content: '\f301'; } /* '⎉' */
+
+.mp-links-flickr:before { content: '\f303'; } /* '⎉' */
+.mp-links-c-flickr:before { content: '\f304'; } /* '⎉' */
+
+.mp-links-vimeo:before { content: '\f306'; } /* '⎉' */
+.mp-links-c-vimeo:before { content: '\f307'; } /* '⎉' */
+
+.mp-links-c-twitter:before { content: '\f309'; } /* '⎉' */
+.mp-links-twitter:before { content: '\f30A'; } /* '⎉' */
+
+.mp-links-c-facebook:before { content: '\f30C'; } /* '⎉' */
+.mp-links-facebook:before { content: '\f30D'; } /* '⎉' */
+
+.mp-links-c-facebook:before { content: '\f30C'; } /* '⎉' */
+.mp-links-facebook:before { content: '\f30D'; } /* '⎉' */
+.mp-links-s-facebook:before { content: '\f30E'; } /* '⎉' */
+
+.mp-links-c-google:before { content: '\f30F'; } /* '⎉' */
+.mp-links-google:before { content: '\f310'; } /* '⎉' */
+
+.mp-links-c-pinterest:before { content: '\f312'; } /* '⎉' */
+.mp-links-pinterest:before { content: '\f313'; } /* '⎉' */
+
+.mp-links-c-tumblr:before { content: '\f315'; } /* '⎉' */
+.mp-links-tumblr:before { content: '\f316'; } /* '⎉' */
+
+.mp-links-c-linkedin:before { content: '\f318'; } /* '⎉' */
+.mp-links-linkedin:before { content: '\f319'; } /* '⎉' */
+
+.mp-links-c-dribbble:before { content: '\f31B'; } /* '⎉' */
+.mp-links-dribbble:before { content: '\f31C'; } /* '⎉' */
+
+.mp-links-c-stumbleupon:before { content: '\f31E'; } /* '⎉' */
+.mp-links-stumbleupon:before { content: '\f31F'; } /* '⎉' */
+
+.mp-links-c-lastfm:before { content: '\f321'; } /* '⎉' */
+.mp-links-lastfm:before { content: '\f322'; } /* '⎉' */
+
+.mp-links-c-rdio:before { content: '\f324'; } /* '⎉' */
+.mp-links-rdio:before { content: '\f325'; } /* '⎉' */
+
+.mp-links-c-spotify:before { content: '\f327'; } /* '⎉' */
+.mp-links-spotify:before { content: '\f328'; } /* '⎉' */
+
+.mp-links-c-spotify:before { content: '\f327'; } /* '⎉' */
+.mp-links-spotify:before { content: '\f328'; } /* '⎉' */
+
+.mp-links-instragram:before { content: '\f32d'; } /* '⎉' */
+
+.mp-links-dropbox:before { content: '\f330'; } /* '⎉' */
+
+.mp-links-evernote:before { content: '\f333'; } /* '⎉' */
+
+.mp-links-flattr:before { content: '\f336'; } /* '⎉' */
+
+.mp-links-c-skype:before { content: '\f33A'; } /* '⎉' */
+.mp-links-skype:before { content: '\f339'; } /* '⎉' */
+
+.mp-links-renren:before { content: '\f33C'; } /* '⎉' */
+
+.mp-links-paypal:before { content: '\f342'; } /* '⎉' */
+
+.mp-links-picasa:before { content: '\f345'; } /* '⎉' */
+
+.mp-links-soundcloud:before { content: '\f348'; } /* '⎉' */
+
+.mp-links-mixi:before { content: '\f34B'; } /* '⎉' */
+
+.mp-links-googlecircles:before { content: '\f351'; } /* '⎉' */
+
+.mp-links-smashing:before { content: '\f357'; } /* '⎉' */
+
