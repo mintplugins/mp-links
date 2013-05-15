@@ -1,41 +1,40 @@
-=== Move Plugins Core ===
+=== MP Links ===
 Contributors: johnstonphilip
 Donate link: http://moveplugins.com/
-Tags: message bar, header
-Requires at least: 3.0.1
-Tested up to: 3.5
-Stable tag: 4.3
+Tags: links, social
+Requires at least: 3.3
+Tested up to: 3.6
+Stable tag: 1.0.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin gives developers access to a core set of classes for creating Settings, Metaboxes, Widgets, Plugins and more.
+Create groups of links with icons.
 
 == Description ==
 
-This plugin gives developers access to a core set of classes for creating Settings, Metaboxes, Widgets, Plugins and more.
-
+Create and display groups of links with icons to your favourite social media places. Pre-built links for Facebook, Twitter and more, it's the simplest way to add or remove links to your website.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-1. Upload the 'message-bar' folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to Settings > Message Bar and fill out the options. 
+Full instructions and FAQ available at:
+http://moveplugins.com/doc/mp-links/
 
 == Frequently Asked Questions ==
 
-= What do I do with this?  =
-
-After you install, make sure to fill out all options under the Settings > Message Bar panel in the WordPress admin area.
+Full instructions and FAQ available at:
+http://moveplugins.com/doc/mp-links/
 
 == Screenshots ==
 
-1. This is a screenshot of the Message Bar in action.
+1. Creating a new link.
 
-2. This is a screenshot of the Message Bar option.
+2. Creating a new link group.
+
+3. Adding links using the shortcode.
+
+4. Adding links using the widget.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0.0 =
 * Original release

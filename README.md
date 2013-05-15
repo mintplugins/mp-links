@@ -1,4 +1,4 @@
-mp_stacks
+MP Links
 =========
 
-Display stacks of content from WordPress
+Create groups of links with icons
