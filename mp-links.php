@@ -124,6 +124,11 @@ function mp_links_include_files(){
 		require( MP_LINKS_PLUGIN_DIR . 'includes/updater/mp-links-update.php' );
 		
 		/**
+		 * Misc Functions
+		 */
+		require( MP_LINKS_PLUGIN_DIR . 'includes/misc-functions/mp-links.php' );
+		
+		/**
 		 * Settings Metabox for mp_links
 		 */
 		require( MP_LINKS_PLUGIN_DIR . 'includes/metaboxes/links/links.php' );
@@ -142,6 +147,11 @@ function mp_links_include_files(){
 		 * Enqueue Scripts
 		 */
 		require( MP_LINKS_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
+		
+		/**
+		 * Shortcode
+		 */
+		require( MP_LINKS_PLUGIN_DIR . 'includes/misc-functions/shortcode.php' );
 					
 	}
 }

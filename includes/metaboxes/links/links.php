@@ -17,9 +17,22 @@ function mp_links_create_meta_box(){
 	);
 	
 	/**
-	 * Custom filter to allow for themes to change the description of the sermon thumbnail. This allows for custom size description. IE: 200px by 100px
+	 * Custom filter to allow for custom link types
+	 * This filter is shared with the mp_people plugin
 	 */
-	$default_links_array = array('mp-links-facebook' => 'Facebook', 'mp-links-twitter' => 'Twitter', 'mp-links-tumblr' => 'Tumblr', 'mp-links-youtube' => 'YouTube', 'mp-links-vimeo' => 'Vimeo', 'mp-links-myspace' => 'MySpace', 'mp-links-linkedin' => 'Linked-In', 'mp-links-dribbble' => 'Dribbble', 'mp-links-pinterest' => 'Pinterest', 'mp-links-email' => 'Email', 'mp-links-rss' => 'RSS');
+	$default_links_array = array(
+		'mp-links-facebook' => 'Facebook', 
+		'mp-links-twitter' => 'Twitter', 
+		'mp-links-tumblr' => 'Tumblr', 
+		'mp-links-youtube' => 'YouTube', 
+		'mp-links-vimeo' => 'Vimeo', 
+		'mp-links-myspace' => 'MySpace', 
+		'mp-links-linkedin' => 'Linked-In', 
+		'mp-links-dribbble' => 'Dribbble', 
+		'mp-links-pinterest' => 'Pinterest', 
+		'mp-links-email' => 'Email', 
+		'mp-links-rss' => 'RSS'
+	);
 	 
 	$mp_links_array = has_filter('mp_links_array') ? apply_filters( 'mp_links_array', $default_links_array) : $default_links_array;
 		
@@ -30,14 +43,14 @@ function mp_links_create_meta_box(){
 	$mp_links_items_array = array(
 		array(
 			'field_id'			=> 'link_url',
-			'field_title' 	=> __( 'Link URL', 'mp_core'),
+			'field_title' 	=> __( 'Link URL', 'mp_links'),
 			'field_description' 	=> 'Enter the URL for this link:',
 			'field_type' 	=> 'url',
 			'field_value' => ''
 		),
 		array(
 			'field_id'			=> 'link_type',
-			'field_title' 	=> __( 'Link Type', 'mp_core'),
+			'field_title' 	=> __( 'Link Type', 'mp_links'),
 			'field_description' 	=> 'Select the type of link this is:',
 			'field_type' 	=> 'select',
 			'field_value' => '',
@@ -45,7 +58,7 @@ function mp_links_create_meta_box(){
 		),
 		array(
 			'field_id'			=> 'link_target',
-			'field_title' 	=> __( 'Link Open Type', 'mp_core'),
+			'field_title' 	=> __( 'Link Open Type', 'mp_links'),
 			'field_description' 	=> 'Select the way this link will open:',
 			'field_type' 	=> 'select',
 			'field_value' => '',

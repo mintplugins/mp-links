@@ -11,7 +11,7 @@
  */
 function mp_links_post_type() {
 	
-		$sermon_labels =  apply_filters( 'mp_links_labels', array(
+		$links_labels =  apply_filters( 'mp_links_labels', array(
 			'name' 				=> 'Links',
 			'singular_name' 	=> 'Link',
 			'add_new' 			=> __('Add New', 'mp_links'),
@@ -28,24 +28,60 @@ function mp_links_post_type() {
 		) );
 		
 			
-		$sermon_args = array(
-			'labels' 			=> $sermon_labels,
+		$links_args = array(
+			'labels' 			=> $links_labels,
 			'public' 			=> true,
-			'publicly_queryable'=> false,
+			'publicly_queryable'=> true,
 			'show_ui' 			=> true, 
-			'show_in_nav_menus' => false,
-			'show_in_menu' 		=> true, 
+			'show_in_menu' 		=> true,
+			'show_in_nav_menus' => false, 
 			'menu_position'		=> 5,
 			'query_var' 		=> true,
 			'rewrite' 			=> array( 'slug' => 'links' ),
 			'capability_type' 	=> 'post',
-			'has_archive' 		=> false, 
+			'has_archive' 		=> true, 
 			'hierarchical' 		=> false,
-			'supports' 			=> apply_filters('mp_links_people_supports', array( 'title' ) ),
+			'supports' 			=> apply_filters('mp_slide_slide_supports', array( 'title') ),
 		); 
-		register_post_type( 'mp_link', apply_filters( 'mp_links_people_post_type_args', $sermon_args ) );
+		register_post_type( 'mp_link', apply_filters( 'mp_links_people_post_type_args', $links_args ) );
 }
 add_action( 'init', 'mp_links_post_type', 0 );
+
+/**
+ * Link Groups Taxonomy
+ */
+function mp_links_groups_taxonomy() {  
+		
+		// Add new taxonomy, make it hierarchical (like categories)
+		$labels = array(
+			'name'                => __( 'Link Groups', 'mp_links' ),
+			'singular_name'       => __( 'Link Group', 'mp_links' ),
+			'search_items'        => __( 'Search Link Groups', 'mp_links' ),
+			'all_items'           => __( 'All Link Groups', 'mp_links' ),
+			'parent_item'         => __( 'Parent Link Group', 'mp_links' ),
+			'parent_item_colon'   => __( 'Parent Link Group:', 'mp_links' ),
+			'edit_item'           => __( 'Edit Link Group', 'mp_links' ), 
+			'update_item'         => __( 'Update Link Group', 'mp_links' ),
+			'add_new_item'        => __( 'Add New Link Group', 'mp_links' ),
+			'new_item_name'       => __( 'New Link Group Name', 'mp_links' ),
+			'menu_name'           => __( 'Link Groups', 'mp_links' ),
+		); 	
+  
+		register_taxonomy(  
+			'mp_link_groups',  
+			'mp_link',  
+			array(  
+				'hierarchical' => true,  
+				'label' => 'Link Groups',  
+				'labels' => $labels,  
+				'query_var' => true,  
+				'with_front' => false, 
+				'rewrite' => array('slug' => 'link_groups')  
+			)  
+		);  
+}  
+add_action( 'load_textdomain', 'mp_links_groups_taxonomy' ); 
+
 
 /**
  * Change default title
@@ -82,38 +118,3 @@ function mp_links_remove_wp_links() {
 	remove_menu_page('link-manager.php');
 }
 add_action( 'admin_menu', 'mp_links_remove_wp_links' );
-
-/**
- * Link Groups Taxonomy
- */
-function mp_links_groups_taxonomy() {  
-		
-		// Add new taxonomy, make it hierarchical (like categories)
-		$labels = array(
-			'name'                => __( 'Link Groups', 'mp_links' ),
-			'singular_name'       => __( 'Link Group', 'mp_links' ),
-			'search_items'        => __( 'Search Link Groups', 'mp_links' ),
-			'all_items'           => __( 'All Link Groups', 'mp_links' ),
-			'parent_item'         => __( 'Parent Link Group', 'mp_links' ),
-			'parent_item_colon'   => __( 'Parent Link Group:', 'mp_links' ),
-			'edit_item'           => __( 'Edit Link Group', 'mp_links' ), 
-			'update_item'         => __( 'Update Link Group', 'mp_links' ),
-			'add_new_item'        => __( 'Add New Link Group', 'mp_links' ),
-			'new_item_name'       => __( 'New Link Group Name', 'mp_links' ),
-			'menu_name'           => __( 'Link Groups', 'mp_links' ),
-		); 	
-  
-		register_taxonomy(  
-			'mp_link_groups',  
-			'mp_link',  
-			array(  
-				'hierarchical' => true,  
-				'label' => 'Link Groups',  
-				'labels' => $labels,  
-				'query_var' => true,  
-				'with_front' => false, 
-				'rewrite' => array('slug' => 'link_groups')  
-			)  
-		);  
-}  
-add_action( 'init', 'mp_links_groups_taxonomy', 10 ); 
