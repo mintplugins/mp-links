@@ -39,5 +39,7 @@ function mp_links($mp_link_group){
 		$html_output .= '</ul>';
 	endif;
 	
+	wp_reset_query();
+	
 	return $html_output;
 }

@@ -36,6 +36,9 @@ http://moveplugins.com/doc/mp-links/
 
 == Changelog ==
 
+= 1.0.0.2 = May 17, 2013
+Added wp_reset_query to the end of the mp_links function
+
 = 1.0.0.1 = May 17, 2013
 * Changed updates and plugin check from moveplugins.com to repo.moveplugins.com
 
