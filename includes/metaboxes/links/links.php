@@ -10,7 +10,7 @@ function mp_links_create_meta_box(){
 	 */
 	$mp_links_add_meta_box = array(
 		'metabox_id' => 'mp_links_metabox', 
-		'metabox_title' => __( 'Link Icon', 'mp_sermons'), 
+		'metabox_title' => __( 'Link Icon', 'mp_links'), 
 		'metabox_posttype' => 'mp_link', 
 		'metabox_context' => 'advanced', 
 		'metabox_priority' => 'low' 
@@ -18,10 +18,10 @@ function mp_links_create_meta_box(){
 	
 	/**
 	 * Custom filter to allow for custom link types
-	 * This filter is shared with the mp_people plugin
 	 */
 	$default_links_array = array(
 		'mp-links-facebook' => 'Facebook', 
+		'mp-links-instagram' => 'Instagram', 
 		'mp-links-twitter' => 'Twitter', 
 		'mp-links-tumblr' => 'Tumblr', 
 		'mp-links-youtube' => 'YouTube', 
