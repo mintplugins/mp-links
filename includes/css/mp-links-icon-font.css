@@ -34,7 +34,7 @@
 /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.mp-links-youtube:before { content: '\f300'; } /* '⎉' */
+.mp-links-youtube:before { content: '\f289'; } /* '⎉' */
 
 .mp-links-github:before { content: '\f300'; } /* '⎉' */
 .mp-links-c-github:before { content: '\f301'; } /* '⎉' */
