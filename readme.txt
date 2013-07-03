@@ -4,7 +4,7 @@ Donate link: http://moveplugins.com/
 Tags: links, social
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.0.0.4
+Stable tag: 1.0.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,7 @@ http://moveplugins.com/doc/mp-links/
 4. Adding links using the widget.
 
 == Changelog ==
+= 1.0.0.5 = July 2, 2013
 Changed action hook for taxonomy from text_domain to init
 
 = 1.0.0.2 = May 17, 2013
