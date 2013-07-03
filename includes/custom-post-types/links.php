@@ -80,7 +80,7 @@ function mp_links_groups_taxonomy() {
 			)  
 		);  
 }  
-add_action( 'init', 'mp_links_groups_taxonomy' ); 
+add_action( 'after_setup_theme', 'mp_links_groups_taxonomy' ); 
 
 
 /**
