@@ -4,7 +4,7 @@ Donate link: http://moveplugins.com/
 Tags: links, social
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.0.0.7
+Stable tag: 1.0.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,10 @@ http://moveplugins.com/doc/mp-links/
 4. Adding links using the widget.
 
 == Changelog ==
+
+= 1.0.0.8 = July 11, 2013
+-Changed out Entypo Font for new font from Fontello.com including youtube and entypo
+-Icons are naturally larger
 
 = 1.0.0.7 = July 11, 2013
 Removed Smashing mag and replaced with youtube icon in entypo font
