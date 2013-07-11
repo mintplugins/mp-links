@@ -4,7 +4,7 @@ Donate link: http://moveplugins.com/
 Tags: links, social
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.0.0.6
+Stable tag: 1.0.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ http://moveplugins.com/doc/mp-links/
 4. Adding links using the widget.
 
 == Changelog ==
+
+= 1.0.0.7 = July 11, 2013
+Removed Smashing mag and replaced with youtube icon in entypo font
 
 = 1.0.0.6 = July 2, 2013
 Changed action hook for taxonomy from init to after_setup_theme
