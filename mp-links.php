@@ -3,7 +3,7 @@
 Plugin Name: MP Links
 Plugin URI: http://moveplugins.com
 Description: Create groups of links with icons
-Version: 1.0.0.8
+Version: 1.0.0.9
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_links
@@ -101,11 +101,16 @@ function mp_links_include_files(){
 	 * If mp_core isn't active, stop and install it now
 	 */
 	if (!function_exists('mp_core_textdomain')){
-		
+			
 		/**
 		 * Include Plugin Checker
 		 */
-		require( MP_LINKS_PLUGIN_DIR . 'includes/plugin-checker/class-plugin-checker.php' );
+		require( MP_LINKS_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-checker.php' );
+		
+		/**
+		 * Include Plugin Installer
+		 */
+		require( MP_LINKS_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
 		
 		/**
 		 * Check if wp_core in installed

@@ -4,7 +4,7 @@ Donate link: http://moveplugins.com/
 Tags: links, social
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.0.0.8
+Stable tag: 1.0.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,21 +36,24 @@ http://moveplugins.com/doc/mp-links/
 
 == Changelog ==
 
+= 1.0.0.9 = July 26, 2013
+*plugin-checker/plugin-installer classes change
+
 = 1.0.0.8 = July 11, 2013
--Changed out Entypo Font for new font from Fontello.com including youtube and entypo
--Icons are naturally larger
+*Changed out Entypo Font for new font from Fontello.com including youtube and entypo
+*Icons are naturally larger
 
 = 1.0.0.7 = July 11, 2013
-Removed Smashing mag and replaced with youtube icon in entypo font
+*Removed Smashing mag and replaced with youtube icon in entypo font
 
 = 1.0.0.6 = July 2, 2013
-Changed action hook for taxonomy from init to after_setup_theme
+*Changed action hook for taxonomy from init to after_setup_theme
 
 = 1.0.0.5 = July 2, 2013
-Changed action hook for taxonomy from text_domain to init
+*Changed action hook for taxonomy from text_domain to init
 
 = 1.0.0.2 = May 17, 2013
-Added wp_reset_query to the end of the mp_links function
+*Added wp_reset_query to the end of the mp_links function
 
 = 1.0.0.1 = May 17, 2013
 * Changed updates and plugin check from moveplugins.com to repo.moveplugins.com
