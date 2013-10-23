@@ -32,7 +32,14 @@ function mp_links($mp_link_group){
 		while( $link_group->have_posts() ) : $link_group->the_post(); 
 		
 			//Display this link
-			$html_output .= '<li class="' . get_post_meta(get_the_id(), 'link_type', true)  . '-li"><a target="' . get_post_meta(get_the_id(), 'link_target', true) . '" class="' . get_post_meta(get_the_id(), 'link_type', true) . '" href="' . get_post_meta(get_the_id(), 'link_url', true) . '">' . get_the_title() . '</a></li>';
+			$html_output .= '<li class="' . get_post_meta(get_the_id(), 'link_type', true)  . '-li">';
+			$html_output .= '<a target="' . get_post_meta(get_the_id(), 'link_target', true) . '" class="' . get_post_meta(get_the_id(), 'link_type', true) . '-a" href="' . get_post_meta(get_the_id(), 'link_url', true) . '">';
+				$html_output .= '<div class="' . get_post_meta(get_the_id(), 'link_type', true) .  '" >';
+					//Usually we will hide this div using css so we just see the icon
+					$html_output .= '<div class="mp-links-title" >' . get_the_title() . '</div>';
+				$html_output .= '</div>';
+			$html_output .= '</a>';
+			$html_output .= '</li>';
 			
 			
 		endwhile;
