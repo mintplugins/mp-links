@@ -25,3 +25,28 @@ function mp_links_enqueue_scripts(){
  * Enqueue font face for links
  */
 add_action( 'wp_enqueue_scripts', 'mp_links_enqueue_scripts' );
+
+/**
+ * Admin Scripts
+ *
+ * @since    1.0.0
+ * @link     http://moveplugins.com/doc/
+ * @see      wp_enqueue_script()
+ * @see      get_current_screen()
+ * @return   void
+ */
+function mp_links_admin_scripts(){
+	
+	//Get current page
+	$current_page = get_current_screen();
+	
+	//Only load if we are on a post based page
+	if ( $current_page->base == 'post' ){
+	
+		//JS for the admin
+		wp_enqueue_script( 'mp_links_admin_js', plugins_url( '/js/mp-links-admin.js', dirname( __FILE__ ) ) );
+		
+	}
+	
+}
+add_action( 'admin_enqueue_scripts', 'mp_links_admin_scripts' );

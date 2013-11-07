@@ -34,7 +34,7 @@ function mp_links($mp_link_group){
 			//Display this link
 			$html_output .= '<li class="' . get_post_meta(get_the_id(), 'link_type', true)  . '-li">';
 			$html_output .= '<a target="' . get_post_meta(get_the_id(), 'link_target', true) . '" class="' . get_post_meta(get_the_id(), 'link_type', true) . '-a" href="' . get_post_meta(get_the_id(), 'link_url', true) . '">';
-				$html_output .= '<div class="' . get_post_meta(get_the_id(), 'link_type', true) .  '" >';
+				$html_output .= '<div style="background-image:url(' . get_post_meta(get_the_id(), 'link_custom_icon', true) . ');" class="' . get_post_meta(get_the_id(), 'link_type', true) .  '" >';
 					//Usually we will hide this div using css so we just see the icon
 					$html_output .= '<div class="mp-links-title" >' . get_the_title() . '</div>';
 				$html_output .= '</div>';

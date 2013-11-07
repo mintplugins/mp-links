@@ -32,4 +32,4 @@
 		$mp_links_plugin_updater = new MP_CORE_Plugin_Updater($args);
 	}
  }
-add_action( 'init', 'mp_links_update' );
+add_action( 'admin_init', 'mp_links_update' );

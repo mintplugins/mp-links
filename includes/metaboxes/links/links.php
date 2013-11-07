@@ -26,12 +26,20 @@ function mp_links_create_meta_box(){
 		'mp-links-tumblr' => 'Tumblr', 
 		'mp-links-youtube' => 'YouTube', 
 		'mp-links-vimeo' => 'Vimeo', 
-		'mp-links-myspace' => 'MySpace', 
+		'mp-links-soundcloud' => 'Soundcloud', 
+		'mp-links-soundcloud' => 'Dropbox',
+		'mp-links-googleplus' => 'Google+', 
+		'mp-links-picasa' => 'Picasa', 
+		'mp-links-stumbleupon' => 'Stumble Upon',
+		'mp-links-spotify' => 'Spotify', 
+		'mp-links-paypal' => 'Paypal', 
+		'mp-links-skype' => 'Skype', 
 		'mp-links-linkedin' => 'Linked-In', 
 		'mp-links-dribbble' => 'Dribbble', 
 		'mp-links-pinterest' => 'Pinterest', 
 		'mp-links-email' => 'Email', 
-		'mp-links-rss' => 'RSS'
+		'mp-links-rss' => 'RSS',
+		'mp-links-customicon' => 'Use Custom Icon'
 	);
 	 
 	$mp_links_array = has_filter('mp_links_array') ? apply_filters( 'mp_links_array', $default_links_array) : $default_links_array;
@@ -50,11 +58,18 @@ function mp_links_create_meta_box(){
 		),
 		array(
 			'field_id'			=> 'link_type',
-			'field_title' 	=> __( 'Link Type', 'mp_links'),
-			'field_description' 	=> 'Select the type of link this is:',
+			'field_title' 	=> __( 'Link Icon', 'mp_links'),
+			'field_description' 	=> 'Select the icon to use for this link:',
 			'field_type' 	=> 'select',
 			'field_value' => '',
 			'field_select_values' => $mp_links_array
+		),
+		array(
+			'field_id'			=> 'link_custom_icon',
+			'field_title' 	=> __( 'Custom Icon', 'mp_links'),
+			'field_description' 	=> 'Upload your custom icon here.',
+			'field_type' 	=> 'mediaupload',
+			'field_value' => '',
 		),
 		array(
 			'field_id'			=> 'link_target',

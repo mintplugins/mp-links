@@ -3,7 +3,7 @@
 Plugin Name: MP Links
 Plugin URI: http://moveplugins.com
 Description: Create groups of links with icons
-Version: 1.0.1.1
+Version: 1.0.1.2
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_links
